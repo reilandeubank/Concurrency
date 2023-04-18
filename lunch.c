@@ -59,7 +59,7 @@ int lunch_get_ticket(struct lunch *lunch) {
     printf("<%lu Customer> enter <lunch_get_ticket>\n", pthread_self());
     sem_wait(&lunch->ticket_queue_sem);
 
-    int ticket_number = lunch->ticket_counter++
+    int ticket_number = lunch->ticket_counter++;
     printf("<%lu Customer> get ticket %d\n", pthread_self(), ticket_number);
 
     sem_post(&lunch->ticket_queue_sem);
